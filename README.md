@@ -11,6 +11,11 @@
          \___/ \___/  |_| |_____|___|_| \_|_____| |_____|\___/|_|\___/ 
 
 gfx: Exocet
+
 music: Glafouk
+
 code: mara
+
 2018
+
+https://demozoo.org/productions/186764/
