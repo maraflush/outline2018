@@ -1,0 +1,7 @@
+*.nes
+*.o
+flush.s
+tempo_music.s
+common.s
+.DS_Store
+*.html
