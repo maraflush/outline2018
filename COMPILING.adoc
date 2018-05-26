@@ -1,0 +1,62 @@
+= COMPILATION NOTES
+
+== Requirements:
+
+=== Windows
+
+* CC65 at least V2.16 or V2.16 - Git 5cc1426
+* Famitracker v0.46
+* NES Screen Tool v2.3
+* NES Space Checker v1.2
+* Mesen v0.9.5
+
+=== Linux
+
+* cc65 V2.17
+* FCEUX v2.2.3
+
+=== MacOSX
+
+* cc65 V2.17 (version available in homebrew (package manager))
+* FCEUX v2.2.3
+
+
+== Build .NES rom
+
+=== Windows
+
+1. Set PATH environment variable to the cc65 bin directory via the advanced
+computer settings.
+2. Set CC65_HOME environment variable to the cc65 root directory via the
+advanced computer settings.
+3. Run compile.bat.
+4. Profit with Mesen.
+
+NOTES: NES Screen Tool is useful to check the see the nametable (.nam) files.
+Before all, don't forget to load the palettes (.pal file) and charset
+files (.chr). After load, the .nam file.+
++
+NES Space Checker show how filled the different banks.+
++
+In NES, the major banks are CHR and PRG for the charsets and the
+program.
+
+=== Linux and MacOSX
+
+1. Set the PATH and CC65_HOME environment variables as Windows.
+2. Set the FCEUX path in the PATH environment variable.
+3. Install ASCIIDOC or ASCIIDOCTOR to compile the documentation.
+4. Run "make" (N.B.: don't put the quotes)
+5. Run "make fceux" (N.B.: don't put the quotes) and profit with FCEUX.
+
+
+== Links
+
+
+* https://github.com/cc65/cc65
+
+* https://shiru.untergrund.net/software.shtml
+
+* https://www.mesen.ca
+
+* https://www.fceux.org
