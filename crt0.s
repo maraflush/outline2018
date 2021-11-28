@@ -277,9 +277,9 @@ nmi:
 	lda #0
 	sta <FRAMECNT2
 @skipNtsc:
-
+.IF .DEFINED(enable_music)
     jsr ft_music_play
-
+.ENDIF
 	pla
 	tay
 	pla
