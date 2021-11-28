@@ -33,18 +33,16 @@
 #define BK_GREETS               9
 #define BK_END                  10
 
+#define BANK_GENERAL            0
+#define BANK_ROAD               1
+#define BANK_THOISSEY           2
+
+static volatile unsigned char *bank_switch = (unsigned char *) 0x8000;
 
 static const unsigned char *son_mom_dialog[] = {
         n01_son_talk,
         n02_mom_talk,
         n03_son_talk
-};
-
-
-static const unsigned char bank[] = {
-    0,          // bank generale
-    1,           // bank route
-    2           // bank thoissey
 };
 
 
@@ -308,7 +306,7 @@ void scn_thoissey_init() {
     /* the following is the bank switching
      * to chr bank number 2
      */
-    (unsigned char) bank[2] = 2;
+    *bank_switch = BANK_THOISSEY;
     ppu_off();
     pal_clear();
     oam_clear();
@@ -326,7 +324,7 @@ void scn_thoissey_update() {
 void scn_thoissey_deinit() {
     raz_scene();
     /* bank switching to chr bank number 0 */
-    (unsigned char)bank[0] = 0;
+    *bank_switch = BANK_GENERAL;
 }
 
 
@@ -348,7 +346,7 @@ void scn_arrived_thoissey_deinit() {
 
 void scn_on_road_init() {
     /* switch to chr bank 1 */
-    (unsigned char) bank[1] = 1;
+    *bank_switch = BANK_ROAD;
     ppu_off();
     pal_clear();
     oam_clear();
@@ -412,7 +410,7 @@ void scn_on_road_deinit() {
     scroll(0,0);
     raz_scene();
     /* switching to chr bank 0 */
-    (unsigned char) bank[0] = 0;
+    *bank_switch = BANK_GENERAL;
 }
 
 
